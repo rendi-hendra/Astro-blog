@@ -1,9 +1,22 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import { ViewTransitions } from "astro:transitions";
+import LayoutDashboard from "../../layouts/LayoutDashboard.astro";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Loader2 } from "lucide-react";
+import { InputForm } from "../../components/Form.tsx";
+// import { ViewTransitions } from "astro:transitions";
 ---
 
-<Layout title="Dashboard">
-  <ViewTransitions />
-  <p>Dashboard</p>
-</Layout>
+<LayoutDashboard title="Dashboard">
+  <!-- <ViewTransitions /> -->
+  <p>TEST</p>
+  <Input />
+  <Button>Secondary</Button>
+  <Button disabled>
+    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+    Please wait
+  </Button>
+  <Input type="email" placeholder="Email" />
+
+  <InputForm client:load />
+</LayoutDashboard>
